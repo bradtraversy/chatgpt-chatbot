@@ -24,4 +24,3 @@ Run the bot:
 npm start
 ```
 
-Feel free to add on to this project and make a PR
