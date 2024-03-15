@@ -41,7 +41,13 @@ async function main() {
       chatHistory.push(['user', userInput]);
       chatHistory.push(['assistant', completionText]);
     } catch (error) {
+      if (error.response) {
+        console.error(colors.red(error.response.data.error.code));
+        console.error(colors.red(error.response.data.error.message));
+        return;
+      }
       console.error(colors.red(error));
+      return;
     }
   }
 }
